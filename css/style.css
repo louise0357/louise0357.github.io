@@ -177,3 +177,7 @@ a.active {
   font-size: 1.6rem;
   margin: 2rem 0 3rem;
 }
+
+.maintitlelouise {
+  text-shadow: 0 0 0.3rem var(--main-color);
+}
