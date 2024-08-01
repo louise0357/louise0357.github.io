@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe İçindeki Site</title>
+</head>
+<body>
+    <h1>Iframe İçindeki Site</h1>
+    
+    <script>
+        // Ana siteden gelen mesajı alma
+        window.addEventListener('message', (event) => {
+            if (event.origin !== 'https://www.bizportal.co.il') return; // Güvenlik: Mesajın beklenen kaynaktan geldiğinden emin olun
+
+            // Gelen mesajı işleme
+            console.log('Iframe İçindeki Site - Gelen Mesaj:', event.data);
+
+            // Ana siteye yanıt gönderme
+            event.source.postMessage('Merhaba Ana Site!', event.origin);
+        });
+    </script>
+</body>
+</html>
